@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    Change: <input type="text" id="input" oninput="footToMeter(this.value)" onchange="footToMeter(this.value)"
+           placeholder="footToMeter">
+    <select name="" id="select1">
+        <option value="Feet">Feet</option>
+        <option value="Meters">Meters</option>
+    </select>
+    <select name="" id="select2">
+        <option value="Meters">Meters</option>
+        <option value="Feet">Feet</option>
+    </select>
+    <p id="result">Result: </p>
+</div>
+<script>
+    function footToMeter(valNum) {
+        valNum = parseInt(valNum);
+        let select1 = document.getElementById('select1').value;
+        let select2 = document.getElementById('select2').value;
+
+        switch (true) {
+            case (select1 === 'Feet' && select2 === 'Meters'):
+                document.getElementById('result').innerHTML = 'Result: ' + 3.279 * valNum + ' Foot';
+                break
+            case (select1 === 'Meters' && select2 === 'Feet'):
+                document.getElementById('result').innerHTML = 'Result: ' + 0.305 * valNum + ' Met';
+                break;
+            default:
+                document.getElementById('result').innerHTML = 'Moi ban nhap lai';
+                break;
+        }
+    }
+</script>
+</body>
+</html>
